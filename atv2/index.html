@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Minha lista de tarefas</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/scripts.js" defer></script>
+</head>
+<body>
+  <main class="todo-app">
+    <header class="app-header">
+      <p class="eyebrow">ORGANIZE SEU DIA</p>
+      <h1>Lista de tarefas</h1>
+      <p class="subtitle">Um passo de cada vez.</p>
+    </header>
+
+    <form id="task-form" class="task-form">
+      <label class="sr-only" for="task-input">Nova tarefa</label>
+      <input
+        id="task-input"
+        name="task"
+        type="text"
+        placeholder="O que você precisa fazer?"
+        maxlength="120"
+        required
+      >
+      <button type="submit">Adicionar</button>
+    </form>
+
+    <section class="task-section" aria-label="Suas tarefas">
+      <div class="toolbar">
+        <label class="sr-only" for="search-input">Buscar tarefas</label>
+        <input id="search-input" type="search" placeholder="Buscar tarefa...">
+
+        <label class="sr-only" for="filter-select">Filtrar tarefas</label>
+        <select id="filter-select">
+          <option value="all">Todas</option>
+          <option value="todo">A fazer</option>
+          <option value="done">Feitas</option>
+        </select>
+      </div>
+
+      <p id="task-count" class="task-count"></p>
+      <ul id="task-list" class="task-list"></ul>
+      <p id="empty-message" class="empty-message">Nenhuma tarefa por aqui. Adicione uma!</p>
+      <p id="app-message" class="app-message" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+</body>
+</html>
